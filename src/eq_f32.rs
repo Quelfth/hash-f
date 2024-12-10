@@ -1,8 +1,11 @@
 use std::{hash::Hash, ops::*};
 
+use serde::{Deserialize, Serialize};
 
 
-#[derive(Copy, Clone, Debug)]
+
+#[derive(Copy, Clone, Debug, Serialize, Deserialize)]
+#[serde(transparent)]
 pub struct EqF32 (pub f32);
 
 impl EqF32 {
